@@ -17,6 +17,8 @@ tile_data = PoolIntArray( -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -65538, 1
 [node name="GameCamera" parent="." instance=ExtResource( 4 )]
 backgroundColor = Color( 0.87451, 0.964706, 0.960784, 1 )
 
+[node name="Flag" type="Node2D" parent="."]
+
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="EnemiesGoal" type="Node2D" parent="."]
