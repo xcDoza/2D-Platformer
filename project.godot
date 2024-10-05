@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="2D Platformer"
-run/main_scene="res://scenes/BaseLevel.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [display]
