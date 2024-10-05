@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal died
+
 var gravity = 1000
 var velocity = Vector2.ZERO
 var maxHorizontalSpeed = 150
@@ -9,7 +11,7 @@ var jumpTerminationMultiplier = 4
 var hasDoubleJump = false
 
 func _ready():
-	pass # Replace with function body.
+	$HazardArea.connect("area_entered",self,"on_hazard_area_entered")
 
 func _process(delta):
 	var moveVector = get_movement_vector()
@@ -64,3 +66,6 @@ func update_animation():
 
 func _on_CoyoteTimer_timeout():
 	pass # Replace with function body.
+
+func on_hazard_area_entered(_area2d):
+	emit_signal("died")
