@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="2D Platformer"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/BaseLevel.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -68,9 +68,17 @@ saltar={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+dash={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
+2d_physics/layer_1="TERRAIN"
+2d_physics/layer_2="ENEMY"
+2d_physics/layer_17="ENEMY_HAZARD"
 2d_physics/layer_18="ENEMY_GOAL"
 2d_physics/layer_19="HAZARD"
 2d_physics/layer_20="PICKUP"

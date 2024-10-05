@@ -2,18 +2,44 @@ extends KinematicBody2D
 
 signal died
 
+export(int, LAYERS_2D_PHYSICS) var dashHazardMask
+
+enum State {NORMAL, DASHING}
+
 var gravity = 1000
 var velocity = Vector2.ZERO
 var maxHorizontalSpeed = 150
+var maxDashSpeed = 400
+var minDashSpeed = 200
 var horizontalAcceleration = 2000
 var jumpSpeed = 350
 var jumpTerminationMultiplier = 4
 var hasDoubleJump = false
+var currentState = State.NORMAL
+var isStateNew = true
+
+var defaultHazardMask = 0
 
 func _ready():
 	$HazardArea.connect("area_entered",self,"on_hazard_area_entered")
-
+	defaultHazardMask = $HazardArea.collision_mask
+	
 func _process(delta):
+	match currentState:
+		State.NORMAL:
+			process_normal(delta)
+		State.DASHING:
+			process_dash(delta)
+	isStateNew = false
+
+func change_state(newState):
+	currentState = newState
+	isStateNew = true
+
+func process_normal(delta):
+	if(isStateNew):
+		$DashArea/CollisionShape2D.disabled = true
+		$HazardArea.collision_mask = defaultHazardMask
 	var moveVector = get_movement_vector()
 	velocity.x += moveVector.x * horizontalAcceleration * delta
 	if (moveVector.x == 0):
@@ -41,9 +67,32 @@ func _process(delta):
 	
 	if(is_on_floor()):
 		hasDoubleJump = true
+		
+	if(Input.is_action_just_pressed("dash")):
+		call_deferred("change_state", State.DASHING)
 	
 	update_animation()
 
+func process_dash(delta):
+	if(isStateNew):
+		$DashArea/CollisionShape2D.disabled = false
+		$AnimatedSprite.play("jump")
+		$HazardArea.collision_mask = dashHazardMask
+		var moveVector = get_movement_vector()
+		var velocityMod = 1
+		if(velocity.x != 0):
+			velocityMod = sign(moveVector.x)
+		else:
+			velocityMod = 1 if $AnimatedSprite.flip_h else -1
+			
+		velocity = Vector2(maxDashSpeed * velocityMod, 0)
+		
+	velocity = move_and_slide(velocity, Vector2.UP)
+	velocity.x = lerp(0, velocity.x, pow(2, -8 * delta))
+	
+	if(abs(velocity.x) < minDashSpeed):
+		call_deferred("change_state", State.NORMAL)
+	
 
 func get_movement_vector():
 	var moveVector = Vector2.ZERO
