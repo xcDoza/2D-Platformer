@@ -13,6 +13,8 @@ func _ready():
 	register_player($Player)
 	coin_total_change(get_tree().get_nodes_in_group("coin").size())
 	
+	$Flag.connect("player_won", self, "on_player_won")
+	
 func coin_collected():
 	collectedCoins += 1
 	emit_signal("coin_total_changed", totalCoins, collectedCoins)
@@ -34,3 +36,6 @@ func create_player():
 func on_player_died():
 	currentPlayerNode.queue_free()
 	create_player()
+
+func on_player_won():
+	$"/root/LevelManager".increment_level()
