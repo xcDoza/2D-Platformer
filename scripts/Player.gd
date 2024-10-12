@@ -51,6 +51,7 @@ func process_normal(delta):
 	if (moveVector.y < 0 && (is_on_floor() || !$CoyoteTimer.is_stopped() || hasDoubleJump)):
 		velocity.y = moveVector.y * jumpSpeed
 		if(!is_on_floor() && $CoyoteTimer.is_stopped()):
+			$"/root/Helpers".apply_camera_shake(.75)
 			hasDoubleJump = false
 		$CoyoteTimer.stop()
 		
@@ -77,6 +78,7 @@ func process_normal(delta):
 	update_animation()
 
 func process_dash(delta):
+	$"/root/Helpers".apply_camera_shake(.75)
 	if(isStateNew):
 		$DashArea/CollisionShape2D.disabled = false
 		$AnimatedSprite.play("jump")
@@ -120,4 +122,5 @@ func _on_CoyoteTimer_timeout():
 	pass # Replace with function body.
 
 func on_hazard_area_entered(_area2d):
+	$"/root/Helpers".apply_camera_shake(1)
 	emit_signal("died")

@@ -5,7 +5,7 @@
 [sub_resource type="OpenSimplexNoise" id=1]
 seed = 8273
 
-[node name="GameCamera" type="Camera2D"]
+[node name="GameCamera" type="Camera2D" groups=["camera"]]
 current = true
 script = ExtResource( 1 )
 shakeNoise = SubResource( 1 )

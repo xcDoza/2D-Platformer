@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 LevelManager="*res://scenes/LevelManager.tscn"
+Helpers="*res://scripts/Helpers.gd"
 
 [display]
 

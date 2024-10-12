@@ -23,4 +23,5 @@ func on_area_entered(_area2d):
 	direction *= -1
 
 func on_hitbox_entered(_area2d):
+	$"/root/Helpers".apply_camera_shake(1)
 	queue_free()
