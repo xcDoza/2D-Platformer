@@ -33,4 +33,6 @@ backgroundColor = Color( 0.87451, 0.964706, 0.960784, 1 )
 
 [node name="Hazards" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="PlayerRoot" type="Node2D" parent="."]
+
+[node name="Player" parent="PlayerRoot" instance=ExtResource( 2 )]
