@@ -138,8 +138,6 @@ anims/death = SubResource( 2 )
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="AnimatedSprite" type="Sprite" parent="Visuals"]
-position = Vector2( 0, -7 )
-rotation = 1.5708
 texture = ExtResource( 1 )
 offset = Vector2( 0, -12 )
 
