@@ -148,6 +148,7 @@ extents = Vector2( 5, 6 )
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 0
 script = ExtResource( 3 )
+isSpawning = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "spawn"
@@ -171,7 +172,6 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]
 shape = SubResource( 4 )
-disabled = true
 
 [node name="HitboxArea" type="Area2D" parent="."]
 position = Vector2( 0, -7 )
@@ -180,13 +180,13 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
 shape = SubResource( 5 )
-disabled = true
 
 [node name="Visuals" type="Node2D" parent="."]
+scale = Vector2( 1e-05, 1e-05 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Visuals"]
 frames = SubResource( 1 )
-animation = "spawn"
+animation = "run"
 playing = true
 offset = Vector2( 0, -12 )
 

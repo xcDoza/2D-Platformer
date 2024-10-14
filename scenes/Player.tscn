@@ -82,7 +82,6 @@ process_material = SubResource( 6 )
 texture = ExtResource( 2 )
 
 [node name="Pickup" type="Area2D" parent="."]
-visible = false
 collision_layer = 524288
 collision_mask = 524288
 
@@ -91,7 +90,6 @@ position = Vector2( 0, -11 )
 shape = SubResource( 3 )
 
 [node name="HazardArea" type="Area2D" parent="."]
-visible = false
 position = Vector2( 0, -8 )
 collision_layer = 0
 collision_mask = 327680
@@ -101,7 +99,6 @@ position = Vector2( 0, 1 )
 shape = SubResource( 4 )
 
 [node name="DashArea" type="Area2D" parent="."]
-visible = false
 position = Vector2( 0, -11 )
 collision_layer = 0
 collision_mask = 2
@@ -116,7 +113,6 @@ frames = SubResource( 2 )
 animation = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, -8 )
 shape = SubResource( 1 )
 

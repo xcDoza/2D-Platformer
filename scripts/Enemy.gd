@@ -7,7 +7,7 @@ var maxSpeed = 25
 var velocity = Vector2.ZERO
 var direction = Vector2.ZERO
 var gravity = 500
-var startDirection = Vector2.LEFT
+var startDirection = Vector2.RIGHT
 
 func _ready():
 	direction = startDirection
