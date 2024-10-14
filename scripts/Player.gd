@@ -59,10 +59,10 @@ func process_normal(delta):
 		if(!is_on_floor() && $CoyoteTimer.is_stopped()):
 			$"/root/Helpers".apply_camera_shake(.75)
 			$DashParticles.emitting = true
+			hasDoubleJump = false
 			var timer = get_tree().create_timer(.35)
 			yield(timer,"timeout")
 			$DashParticles.emitting = false
-			hasDoubleJump = false
 		$CoyoteTimer.stop()
 		
 	if(velocity.y < 0 && !Input.is_action_pressed("saltar")):
