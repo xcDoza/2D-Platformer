@@ -75,7 +75,7 @@ tracks/1/keys = {
 [node name="Particles2D" type="Particles2D" parent="."]
 material = SubResource( 1 )
 emitting = false
-amount = 3
+amount = 2
 lifetime = 0.9
 one_shot = true
 explosiveness = 0.9
