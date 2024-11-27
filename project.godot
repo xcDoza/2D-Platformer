@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="2D Platformer"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/UI/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -23,8 +23,8 @@ Helpers="*res://scripts/Helpers.gd"
 
 window/size/width=320
 window/size/height=180
-window/size/test_width=900
-window/size/test_height=450
+window/size/test_width=1800
+window/size/test_height=900
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 

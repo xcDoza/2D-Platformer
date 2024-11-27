@@ -5,7 +5,7 @@ func _ready():
 	connect("mouse_exited", self, "on_mouse_exited")
 	connect("pressed", self, "on_pressed")
 	
-func _process(delta):
+func _process(_delta):
 	rect_pivot_offset = rect_min_size / 2
 	
 func on_mouse_entered():
