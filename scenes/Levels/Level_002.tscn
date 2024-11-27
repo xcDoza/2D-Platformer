@@ -47,9 +47,6 @@ position = Vector2( 171, -342 )
 [node name="EnemyGoal4" parent="EnemiesGoal" index="3" instance=ExtResource( 3 )]
 position = Vector2( -45, -342 )
 
-[node name="Collectables" parent="." index="8"]
-visible = false
-
 [node name="Coin" parent="Collectables" index="0" instance=ExtResource( 5 )]
 position = Vector2( 144, -45 )
 
