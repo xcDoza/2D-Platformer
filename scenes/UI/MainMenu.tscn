@@ -22,7 +22,7 @@ script = ExtResource( 7 )
 backgroundColor = Color( 0.87451, 0.964706, 0.960784, 1 )
 shakeNoise = SubResource( 1 )
 
-[node name="Clouds" type="Node2D" parent="Node2D/GameCamera" instance=ExtResource( 4 )]
+[node name="Clouds" parent="Node2D/GameCamera" instance=ExtResource( 4 )]
 
 [node name="TileMap" type="TileMap" parent="Node2D"]
 tile_set = ExtResource( 6 )

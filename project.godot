@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 LevelManager="*res://scenes/Levels/LevelManager.tscn"
 Helpers="*res://scripts/Helpers.gd"
+ScreenTransitionManager="*res://scenes/Levels/ScreenTransitionManager.tscn"
 
 [display]
 
