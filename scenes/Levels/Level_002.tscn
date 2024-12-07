@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Spikes.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/EnemyGoal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/EnemySpawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/TutorialSign.tscn" type="PackedScene" id=6]
 
 [node name="Level_002" instance=ExtResource( 1 )]
 
@@ -303,3 +304,11 @@ position = Vector2( 478, 0 )
 
 [node name="Spikes16" parent="Hazards" index="53" instance=ExtResource( 2 )]
 position = Vector2( 496, 0 )
+
+[node name="TutorialSign" parent="." index="11" instance=ExtResource( 6 )]
+position = Vector2( 63, -18 )
+text = "Press SHIFT to dash"
+
+[node name="TutorialSign2" parent="." index="12" instance=ExtResource( 6 )]
+position = Vector2( 351, -270 )
+text = "Press SHIFT to kill enemies"
