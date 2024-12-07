@@ -1,16 +1,37 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/LevelComplete.gd" type="Script" id=2]
 
+[sub_resource type="Animation" id=1]
+resource_name = "default"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("PanelContainer:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.1, 1.1 ), Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
+}
+
 [node name="LevelComplete" type="CanvasLayer"]
 script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+anims/default = SubResource( 1 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 margin_left = 126.0
 margin_top = 63.0
 margin_right = 244.0
 margin_bottom = 121.0
+rect_pivot_offset = Vector2( 59, 29 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 1 )

@@ -13,7 +13,7 @@ func on_play_pressed():
 	$"/root/LevelManager".change_level(0)
 
 func on_options_pressed():
-	get_tree().quit()
+	$"/root/ScreenTransitionManager".transition_to_scene("res://scenes/UI/OptionMenuStandalone.tscn")
 
 func on_quit_pressed():
 	get_tree().quit()
