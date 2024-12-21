@@ -48,9 +48,9 @@ tracks/0/keys = {
 }
 
 [node name="AnimatedButton" type="Button"]
-margin_right = 96.0
+margin_right = 112.0
 margin_bottom = 24.0
-rect_min_size = Vector2( 96, 24 )
+rect_min_size = Vector2( 112, 24 )
 rect_pivot_offset = Vector2( 48, 12 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
