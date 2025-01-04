@@ -61,20 +61,14 @@ rect_min_size = Vector2( 112, 0 )
 custom_constants/separation = 6
 
 [node name="PlayButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_left = 8.0
-margin_right = 104.0
 text = "PLAY"
 
 [node name="OptionsButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_left = 8.0
 margin_top = 30.0
-margin_right = 104.0
 margin_bottom = 54.0
 text = "OPTIONS"
 
 [node name="QuitButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_left = 8.0
 margin_top = 60.0
-margin_right = 104.0
 margin_bottom = 84.0
 text = "QUIT"
